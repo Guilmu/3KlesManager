@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<GridPane alignment="CENTER" hgap="10.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" vgap="10.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="activtyreport.view.LoginViewController">
+   <children>
+      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Identifiant : " GridPane.halignment="RIGHT" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Password : " GridPane.halignment="RIGHT" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
+      <TextField fx:id="identLabel" alignment="CENTER" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+         <GridPane.margin>
+            <Insets left="10.0" right="10.0" />
+         </GridPane.margin>
+      </TextField>
+      <TextField fx:id="passwordLabel" GridPane.columnIndex="1" GridPane.rowIndex="2">
+         <GridPane.margin>
+            <Insets left="10.0" right="10.0" />
+         </GridPane.margin>
+      </TextField>
+      <Button fx:id="loginBtn" mnemonicParsing="false" onAction="#handleLogin" text="Login" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="3" GridPane.valignment="CENTER">
+         <GridPane.margin>
+            <Insets right="10.0" />
+         </GridPane.margin>
+      </Button>
+      <Label fx:id="loginFailed" GridPane.rowIndex="3" />
+   </children>
+   <columnConstraints>
+      <ColumnConstraints maxWidth="362.0" minWidth="10.0" prefWidth="190.0" />
+      <ColumnConstraints maxWidth="453.0" minWidth="10.0" prefWidth="233.0" />
+   </columnConstraints>
+   <rowConstraints>
+      <RowConstraints maxHeight="60.0" minHeight="10.0" prefHeight="60.0" />
+      <RowConstraints maxHeight="115.0" minHeight="10.0" prefHeight="40.0" />
+      <RowConstraints maxHeight="102.0" minHeight="10.0" prefHeight="40.0" />
+      <RowConstraints maxHeight="40.0" minHeight="0.0" prefHeight="40.0" />
+      <RowConstraints maxHeight="60.0" minHeight="10.0" prefHeight="21.0" />
+   </rowConstraints>
+</GridPane>
