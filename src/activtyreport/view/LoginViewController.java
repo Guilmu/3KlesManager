@@ -1,6 +1,6 @@
 package activtyreport.view;
 
-import activtyreport.MainApp;
+import org.kles.MainApp;
 import activtyreport.model.Login;
 import activtyreport.view.FXMLDocumentController;
 import java.io.IOException;

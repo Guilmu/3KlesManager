@@ -5,7 +5,7 @@
  */
 package activtyreport.view;
 
-import activtyreport.MainApp;
+import org.kles.MainApp;
 import java.io.IOException;
 import java.net.URL;
 import java.util.Calendar;

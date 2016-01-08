@@ -5,7 +5,7 @@
  */
 package activtyreport.view;
 
-import activtyreport.MainApp;
+import org.kles.MainApp;
 import javafx.stage.Stage;
 
 /**

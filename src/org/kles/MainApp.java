@@ -1,12 +1,15 @@
-package activtyreport;
+package org.kles;
 
 import activtyreport.view.LoginViewController;
 import java.awt.Dimension;
 import java.io.IOException;
+import java.util.Locale;
+import java.util.ResourceBundle;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
@@ -15,6 +18,8 @@ public class MainApp extends Application {
 
     protected Stage primaryStage;
     public BorderPane rootLayout;
+    public static ResourceBundle resourceMessage = ResourceBundle.getBundle("resources/language", Locale.getDefault());
+    public static final Image LOGO_IMAGE = new Image(MainApp.class.getResourceAsStream("/resources/images/logo.png"));
 
     @Override
     public void start(Stage primaryStage) {
@@ -32,8 +37,8 @@ public class MainApp extends Application {
     public void initRootLayout() {
 
         Dimension dimension = java.awt.Toolkit.getDefaultToolkit().getScreenSize();
-        double height = (int)dimension.getHeight()/2;
-        double width = (int) dimension.getWidth()/2;
+        double height = (int) dimension.getHeight() / 2;
+        double width = (int) dimension.getWidth() / 2;
         try {
             // Load root layout from fxml file.
             FXMLLoader loader = new FXMLLoader();

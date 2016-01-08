@@ -1,6 +1,6 @@
 package activtyreport.view;
 
-import activtyreport.MainApp;
+import org.kles.MainApp;
 import com.sun.xml.internal.messaging.saaj.packaging.mime.MessagingException;
 import java.security.NoSuchProviderException;
 import java.text.ParseException;
@@ -77,18 +77,18 @@ public class LoginController {
                 return new Task<String>() {
                     @Override
                     protected String call() throws NoSuchProviderException, MessagingException {
-                        Session session = Session.getDefaultInstance(System.getProperties());
-                        Store store = session.getStore("imaps");
-                        String host = (MainApp.prefs.get("connection.url", null) == null) ? "ssl0.ovh.net" : MainApp.prefs.get("connection.url", null);
-                        int port = (MainApp.prefs.get("connection.port", null) == null) ? 993 : Integer.parseInt(MainApp.prefs.get("connection.port", null));
-                        store.connect(host, port, loginField.getText(), passwordField.getText());
-                        Folder inbox = store.getFolder("INBOX");
-                        inMail = inbox.getMessageCount();
-                        for (Folder f : inbox.list()) {
-                            System.out.println(f.getName());
-                        }
-                        inbox.open(Folder.READ_ONLY);
-                        return generateSessionID();
+                        /*Session session = Session.getDefaultInstance(System.getProperties());
+                         Store store = session.getStore("imaps");
+                         String host = (MainApp.prefs.get("connection.url", null) == null) ? "ssl0.ovh.net" : MainApp.prefs.get("connection.url", null);
+                         int port = (MainApp.prefs.get("connection.port", null) == null) ? 993 : Integer.parseInt(MainApp.prefs.get("connection.port", null));
+                         store.connect(host, port, loginField.getText(), passwordField.getText());
+                         Folder inbox = store.getFolder("INBOX");
+                         inMail = inbox.getMessageCount();
+                         for (Folder f : inbox.list()) {
+                         System.out.println(f.getName());
+                         }
+                         inbox.open(Folder.READ_ONLY);
+                         return generateSessionID();*/
                     }
                 };
             }
@@ -107,7 +107,7 @@ public class LoginController {
                     sessionID = connectionService.getValue();
                     progress.setVisible(false);
                     if (sessionID != null) {
-                        MainApp.prefs.put("login", loginField.getText());
+                       /* MainApp.prefs.put("login", loginField.getText());
                         MainApp.prefs.put("password", passwordField.getText());
                         mainApp.initRestFulOVH(loginField.getText().split("@")[0]);
                         try {

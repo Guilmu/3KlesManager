@@ -5,7 +5,7 @@
  */
 package activtyreport.view;
 
-import activtyreport.MainApp;
+import org.kles.MainApp;
 import activtyreport.model.Conges;
 import activtyreport.model.Login;
 import java.time.LocalDate;
