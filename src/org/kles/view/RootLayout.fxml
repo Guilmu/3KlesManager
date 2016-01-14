@@ -35,15 +35,11 @@
                 </Menu>
                 <Menu mnemonicParsing="false" text="%main.configuration">
                     <items>
-                        <MenuItem mnemonicParsing="false" onAction="#showCustomerOverview" text="%customer.title" />
-                        <MenuItem mnemonicParsing="false" onAction="#showDeveloperOverview" text="%developer.title" />
-                        <MenuItem mnemonicParsing="false" onAction="#showServerOverview" text="%server.title" />
-                        <MenuItem mnemonicParsing="false" onAction="#showEnvironmentOverview" text="%environment.title" />
+                        
                     </items>
                 </Menu>
                 <Menu mnemonicParsing="false" text="%main.process">
                     <items>
-                        <MenuItem mnemonicParsing="false" onAction="#showM3UpgraderLauncherView" text="%process.upgrad" />
                     </items>
                 </Menu>
                 <Menu fx:id="skinmenu" mnemonicParsing="false" text="Skin" />
