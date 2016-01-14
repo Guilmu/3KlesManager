@@ -36,7 +36,6 @@ public class FXMLDocumentController implements Initializable {
     private Button craBtn;
     @FXML
     private Button congeBtn;
-    
 
     @FXML
     private void handleCongeAction(ActionEvent event) throws IOException {
@@ -47,7 +46,7 @@ public class FXMLDocumentController implements Initializable {
         //GridPane FXMLDocumentView = (GridPane) loader.load();
 
         // Set person overview into the center of root layout.
-        mainApp.rootLayout.setCenter(ndfView);
+        mainApp.getRootLayout().setCenter(ndfView);
         CongeViewController controller = loader.getController();
         controller.setMainApp(this.mainApp);
     }
@@ -69,7 +68,7 @@ public class FXMLDocumentController implements Initializable {
         //GridPane FXMLDocumentView = (GridPane) loader.load();
 
         // Set person overview into the center of root layout.
-        mainApp.rootLayout.setCenter(craView);
+        mainApp.getRootLayout().setCenter(craView);
         FXMLDocumentController controller = loader.getController();
         controller.setMainApp(this.mainApp);
     }

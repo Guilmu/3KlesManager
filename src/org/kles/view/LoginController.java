@@ -1,8 +1,6 @@
 package org.kles.view;
 
 import java.time.format.DateTimeFormatter;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import org.kles.fx.custom.TextFieldValidator;
 import javafx.beans.binding.BooleanBinding;
 import javafx.beans.binding.LongBinding;
@@ -17,8 +15,6 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.ProgressIndicator;
 import javafx.scene.control.TextField;
 import javafx.scene.paint.Color;
-import org.json.simple.JSONObject;
-import org.json.simple.parser.ParseException;
 import org.kles.MainApp;
 import org.kles.fx.custom.DateTimePicker;
 import org.kles.login.LoginManager;
@@ -99,25 +95,25 @@ public class LoginController extends AbstractDataModelEditController {
                     progress.setVisible(false);
                     if (sessionID != null) {
                         /*MainApp.prefs.put("login", loginField.getText());
-                        MainApp.prefs.put("password", passwordField.getText());
-                        mainApp.initRestFulOVH(loginField.getText().split("@")[0]);
-                        try {
-                            mainApp.getAccountData().setEmail(mainApp.getRestFulOVH().getAccount());
-                            JSONObject obj = mainApp.getRestFulOVH().getAccountInformation();
-                            JSONObject usg = mainApp.getRestFulOVH().getAccountUsage();
-                            mainApp.getAccountData().setEmail(obj.get("accountName").toString());
-                            mainApp.getAccountData().setName(obj.get("description").toString());
-                            mainApp.getAccountData().setSize(Long.parseLong(obj.get("size").toString()));
-                            mainApp.getAccountData().setQuota(Long.parseLong(usg.get("quota").toString()));
-                            mainApp.getAccountData().setCountEmail(Integer.parseInt(usg.get("emailCount").toString()));
-                            mainApp.getAccountData().setInEmail(inMail);
+                         MainApp.prefs.put("password", passwordField.getText());
+                         mainApp.initRestFulOVH(loginField.getText().split("@")[0]);
+                         try {
+                         mainApp.getAccountData().setEmail(mainApp.getRestFulOVH().getAccount());
+                         JSONObject obj = mainApp.getRestFulOVH().getAccountInformation();
+                         JSONObject usg = mainApp.getRestFulOVH().getAccountUsage();
+                         mainApp.getAccountData().setEmail(obj.get("accountName").toString());
+                         mainApp.getAccountData().setName(obj.get("description").toString());
+                         mainApp.getAccountData().setSize(Long.parseLong(obj.get("size").toString()));
+                         mainApp.getAccountData().setQuota(Long.parseLong(usg.get("quota").toString()));
+                         mainApp.getAccountData().setCountEmail(Integer.parseInt(usg.get("emailCount").toString()));
+                         mainApp.getAccountData().setInEmail(inMail);
 
-                            GetResponderTask task = new GetResponderTask();
-                            task.setMainApp(mainApp);
-                            task.run();
-                        } catch (ParseException ex) {
-                            Logger.getLogger(LoginController.class.getName()).log(Level.SEVERE, null, ex);
-                        }*/
+                         GetResponderTask task = new GetResponderTask();
+                         task.setMainApp(mainApp);
+                         task.run();
+                         } catch (ParseException ex) {
+                         Logger.getLogger(LoginController.class.getName()).log(Level.SEVERE, null, ex);
+                         }*/
                         loginManager.authenticated(sessionID);
                         okClicked = true;
                     }

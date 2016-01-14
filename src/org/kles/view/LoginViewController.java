@@ -25,7 +25,7 @@ public class LoginViewController extends Application {
     private Button loginBtn;
     // Reference to the main application.
     MainApp mainApp;
-    
+
     private boolean testConnection;
 
     /**
@@ -50,7 +50,6 @@ public class LoginViewController extends Application {
      */
     @FXML
     public void handleLogin() throws IOException {
-
         if (testConnection) {
             Login login = new Login(identLabel.toString(), passwordLabel.toString());
             login.setIdent(identLabel.toString());
@@ -61,11 +60,10 @@ public class LoginViewController extends Application {
             GridPane fxmlDocumentView = (GridPane) loader.load();
 
             // Set person overview into the center of root layout.
-            mainApp.rootLayout.setCenter(fxmlDocumentView);
+            mainApp.getRootLayout().setCenter(fxmlDocumentView);
             FXMLDocumentController controller = loader.getController();
             controller.setMainApp(this.mainApp);
-            
-            
+
             // Give the controller access to the main app.
 
             /*

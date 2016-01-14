@@ -4,16 +4,12 @@ import org.kles.fx.custom.DigitalClock;
 import insidefx.undecorator.Undecorator;
 import insidefx.undecorator.UndecoratorScene;
 import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Locale;
 import java.util.Properties;
 import java.util.ResourceBundle;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import java.util.prefs.Preferences;
 
 import javafx.application.Application;
@@ -24,7 +20,6 @@ import javafx.beans.binding.Bindings;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 import javafx.beans.value.ObservableValue;
-import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.image.Image;
@@ -33,9 +28,6 @@ import javafx.stage.Stage;
 import javafx.stage.WindowEvent;
 
 import javax.xml.bind.JAXBContext;
-import javax.xml.bind.JAXBException;
-import javax.xml.bind.Marshaller;
-import javax.xml.bind.PropertyException;
 import javax.xml.bind.Unmarshaller;
 import org.controlsfx.dialog.Dialogs;
 import org.kles.view.RootLayoutController;
@@ -105,7 +97,7 @@ public class MainApp extends Application {
     }
 
     public void clearData() {
-        
+
     }
 
     private void createDataMap() {
@@ -186,7 +178,7 @@ public class MainApp extends Application {
             if (directory.exists() && directory.isDirectory()) {
                 File[] listFile = directory.listFiles();
                 for (File f : listFile) {
-                    
+
                 }
             }
 
