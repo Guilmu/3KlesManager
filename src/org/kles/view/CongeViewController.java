@@ -3,11 +3,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package activtyreport.view;
+package org.kles.view;
 
 import org.kles.MainApp;
-import activtyreport.model.Conges;
-import activtyreport.model.Login;
+import org.kles.model.Conges;
+import org.kles.model.Login;
 import java.time.LocalDate;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;

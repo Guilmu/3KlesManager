@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package activtyreport.model;
+package org.kles.model;
 
 import java.util.ArrayList;
 

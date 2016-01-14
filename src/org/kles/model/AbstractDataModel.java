@@ -1,4 +1,4 @@
-package activtyreport.model;
+package org.kles.model;
 
 import java.io.Serializable;
 import java.util.ArrayList;

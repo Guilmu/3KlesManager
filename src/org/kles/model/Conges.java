@@ -1,6 +1,6 @@
-package activtyreport.model;
+package org.kles.model;
 
-import activtyreport.view.CongeViewController;
+import org.kles.view.CongeViewController;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;

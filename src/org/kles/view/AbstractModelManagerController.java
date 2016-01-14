@@ -1,4 +1,4 @@
-package activtyreport.view;
+package org.kles.view;
 
 import org.kles.fx.custom.FxUtil;
 import java.util.ResourceBundle;
@@ -15,7 +15,7 @@ import org.kles.model.AbstractDataModel;
 
 public abstract class AbstractModelManagerController implements IModelManagerView {
 
-// Reference to the main application.
+    // Reference to the main application.
     protected MainApp mainApp;
     protected ResourceBundle resourseMessage;
     protected String datamodelname = "";
@@ -63,7 +63,7 @@ public abstract class AbstractModelManagerController implements IModelManagerVie
     @Override
     public void handleNew() {
         datamodel = datamodel.newInstance();
-        boolean okClicked = mainApp.showDataModelEditDialog(datamodel);
+        boolean okClicked = mainApp.getRootController().showDataModelEditDialog(datamodel);
         if (okClicked) {
             listData.add(datamodel);
         }
@@ -79,7 +79,7 @@ public abstract class AbstractModelManagerController implements IModelManagerVie
         if (datamodel != null) {
             AbstractDataModel tempData = datamodel.newInstance();
             tempData.populateData(datamodel.extractData());
-            boolean okClicked = mainApp.showDataModelEditDialog(tempData);
+            boolean okClicked = mainApp.getRootController().showDataModelEditDialog(tempData);
             if (okClicked) {
                 listData.add(tempData);
             }
@@ -96,7 +96,7 @@ public abstract class AbstractModelManagerController implements IModelManagerVie
     @Override
     public void handleEdit() {
         if (datamodel != null) {
-            boolean okClicked = mainApp.showDataModelEditDialog(datamodel);
+            boolean okClicked = mainApp.getRootController().showDataModelEditDialog(datamodel);
         } else {
             FxUtil.showAlert(Alert.AlertType.WARNING, resourseMessage.getString("main.delete"), resourseMessage.getString("main.noselection"), String.format(datamodelname + ".noselection" + resourseMessage.getString(datamodelname.toLowerCase() + ".label")));
         }

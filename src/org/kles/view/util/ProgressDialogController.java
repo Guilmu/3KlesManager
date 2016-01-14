@@ -19,7 +19,7 @@ public class ProgressDialogController {
     private ProgressIndicator progress;
 
     private Stage stage;
-
+    
     private Service service;
 
     /**

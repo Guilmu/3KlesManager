@@ -1,4 +1,4 @@
-package activtyreport.view;
+package org.kles.view;
 
 import org.kles.fx.custom.FxUtil;
 import java.util.Iterator;

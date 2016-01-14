@@ -1,9 +1,5 @@
-package activtyreport.view;
+package org.kles.view;
 
-import org.kles.MainApp;
-import com.sun.xml.internal.messaging.saaj.packaging.mime.MessagingException;
-import java.security.NoSuchProviderException;
-import java.text.ParseException;
 import java.time.format.DateTimeFormatter;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -21,24 +17,18 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.ProgressIndicator;
 import javafx.scene.control.TextField;
 import javafx.scene.paint.Color;
-import javax.mail.Folder;
-import javax.mail.MessagingException;
-import javax.mail.NoSuchProviderException;
-import javax.mail.Session;
-import javax.mail.Store;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.ParseException;
 import org.kles.MainApp;
 import org.kles.fx.custom.DateTimePicker;
 import org.kles.login.LoginManager;
-import org.kles.task.GetResponderTask;
 
 /**
  * Dialog to edit details of a developer.
  *
  * @author Jérémy Chaut
  */
-public class LoginController {
+public class LoginController extends AbstractDataModelEditController {
 
     @FXML
     private TextField loginField;
@@ -76,7 +66,7 @@ public class LoginController {
             protected Task<String> createTask() {
                 return new Task<String>() {
                     @Override
-                    protected String call() throws NoSuchProviderException, MessagingException {
+                    protected String call() {
                         /*Session session = Session.getDefaultInstance(System.getProperties());
                          Store store = session.getStore("imaps");
                          String host = (MainApp.prefs.get("connection.url", null) == null) ? "ssl0.ovh.net" : MainApp.prefs.get("connection.url", null);
@@ -89,6 +79,7 @@ public class LoginController {
                          }
                          inbox.open(Folder.READ_ONLY);
                          return generateSessionID();*/
+                        return null;
                     }
                 };
             }
@@ -107,7 +98,7 @@ public class LoginController {
                     sessionID = connectionService.getValue();
                     progress.setVisible(false);
                     if (sessionID != null) {
-                       /* MainApp.prefs.put("login", loginField.getText());
+                        /*MainApp.prefs.put("login", loginField.getText());
                         MainApp.prefs.put("password", passwordField.getText());
                         mainApp.initRestFulOVH(loginField.getText().split("@")[0]);
                         try {
@@ -124,22 +115,9 @@ public class LoginController {
                             GetResponderTask task = new GetResponderTask();
                             task.setMainApp(mainApp);
                             task.run();
-
-//JSONObject resp = mainApp.getRestFulOVH().getResponder();
-//                            JSONObject resp=task.getValue();
-//                            if (resp != null) {
-//                                Responder respond = new Responder();
-//                                respond.setContent(resp.get("content").toString());
-//                                respond.setCopy(Boolean.getBoolean(resp.get("copy").toString()));
-//                                ZonedDateTime from=ZonedDateTime.parse(resp.get("from").toString());
-//                                ZonedDateTime to=ZonedDateTime.parse(resp.get("to").toString());
-//                                respond.setFromDate(from);
-//                                respond.setToDate(to);
-//                                mainApp.getAccountData().getResponderProperty().set(respond);
-//                            }
                         } catch (ParseException ex) {
                             Logger.getLogger(LoginController.class.getName()).log(Level.SEVERE, null, ex);
-                        }
+                        }*/
                         loginManager.authenticated(sessionID);
                         okClicked = true;
                     }
@@ -184,7 +162,7 @@ public class LoginController {
 
     @FXML
     private void handleConnection() {
-        mainApp.showConnectionEditDialog();
+        //mainApp.showConnectionEditDialog();
     }
 
     /**
@@ -200,8 +178,8 @@ public class LoginController {
 
     public void setMainApp(MainApp main) {
         mainApp = main;
-        loginField.setText((MainApp.prefs.get("login", null) == null) ? "" : MainApp.prefs.get("login", null));
-        passwordField.setText((MainApp.prefs.get("password", null) == null) ? "" : MainApp.prefs.get("password", null));
+        //loginField.setText((MainApp.prefs.get("login", null) == null) ? "" : MainApp.prefs.get("login", null));
+        //passwordField.setText((MainApp.prefs.get("password", null) == null) ? "" : MainApp.prefs.get("password", null));
     }
 
 }

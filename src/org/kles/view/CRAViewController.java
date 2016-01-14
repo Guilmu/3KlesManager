@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package activtyreport.view;
+package org.kles.view;
 
 import org.kles.MainApp;
 import javafx.stage.Stage;
